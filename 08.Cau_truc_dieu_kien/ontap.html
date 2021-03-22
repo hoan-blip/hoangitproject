@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Toán tử so sánh ở đây
+        Lớn hơn: >
+        Nhỏ hơn: <
+        Bằng giá trị: =
+        Bằng giá trị và bằng kiểu dữ liệu: ===
+        Lớn hơn hoặc bằng: >=
+        Nhỏ hơn: <=
+        So sánh VÀ: &&
+        So sánh Hoặc: ||
+
+        */
+       //kiểu dử liệu
+       let a = 5;
+       let b = "5";
+        
+       let kiemtra = a <= b; //trả về true hoặc false - kiểu dữ liệu
+
+       let hasPs4Machine  = true; //đúng
+       let hasPs4Game     = false; //sai
+       
+        //Phủ định lại điều kiện: dùng dấu ! trước điều kiện đó 
+        //Các cách để tạo ra kiểu dữ liệu bolean
+
+        //Cách 1: Sử dụng toán tử so sánh
+        // document.write="<br> a == b: " + typeof a == b ;
+        // document.write="<br> a >= b: " + typeof a >= b ;
+
+        let so_sanh = a == b && a >= b;
+
+        var canPlay       = false; // giả sử không thể
+       if( hasPs4Machine && hasPs4Game ){
+           //đúng thì làm gì
+           //document.write(' A nhỏ hơn hoặc bằng B ');
+       }else{
+           //Sai thì làm gì
+          // document.write(' A lớn hơn hoặc băng B ');
+       }  
+       let thong_bao = ( hasPs4Machine && hasPs4Game ) ? 'có thể chơi game' : 'không thể chơi game';
+       document.write(thong_bao);
+    </script>
+</body>
+</html>
