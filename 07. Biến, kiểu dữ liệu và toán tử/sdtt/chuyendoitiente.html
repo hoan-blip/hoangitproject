@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Amount <br>
+                <input type="text" id="amount">
+            </td>
+            <td>From currency
+                <select id="from_currency">
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td>To currency
+                  <select id="to_currency">
+                      <option value="usd">USD</option>
+
+                  </select>
+             </td>
+             <td>
+                 <input type="button" value="convert" id="kq">
+             </td>
+        </tr>
+    </table>
+    <p id="ket_qua"></p>
+    <script>
+        let nut_thuc_hien = document.getElementById('thuc_hien');
+        let kq = document.getElementById('kq');
+        kq.addEventListener('click',function(){
+            //lấy giá trị nhập vào
+            let gia_tri_nhap_vao = document.getElementById('amount').value;
+            //chuyển đổi sang kiểu số
+            gia_tri_nhap_vao = parseInt(gia_tri_nhap_vao);//chuyển sang số
+            //xử lý
+            let gia_tri_chuyen_doi = gia_tri_nhap_vao / 23000;
+            //xuất
+            //lấy phần tử có id là kết quả
+            //gọi hàm innerText và innerHTML
+            let ket_qua = document.getElementById('ket_qua')
+            ket_qua.innerText = gia_tri_chuyen_doi;
+                })
+    </script>
+</body>
+</html>
