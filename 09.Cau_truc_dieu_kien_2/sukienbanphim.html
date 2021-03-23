@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+    <img id="nobita" src="Nobita.png" style="position: absolute; left: 0; top: 0;" height="200px" width="180px" />
+    <script>
+        let nobita = document.getElementById('nobita');
+        document.addEventListener('keydown', function(e){
+            let phim_bam = e.code;
+            
+            switch (phim_bam){
+                case 'ArrowRight':
+                    
+                    var value_left = nobita.style.left;
+                    value_left = parseInt( value_left);
+                    value_left = value_left + 5;
+                    if( value_left <= 1000) {
+                        nobita.style.left = value_left + 'px';                        
+                    }
+                break;
+                case 'ArrowLeft':
+                    
+                    var value_left = nobita.style.left;
+                    value_left = parseInt( value_left);
+                    value_left = value_left - 5;
+                    if( value_left <= 1000) {
+                        nobita.style.left = value_left + 'px';                        
+                    }
+                break;
+                case 'ArrowDown':
+                    
+                    var value_top = nobita.style.top;
+                    value_top = parseInt( value_top);
+                    value_top = value_top + 5;
+                    if( value_top <= 1000) {
+                        nobita.style.top = value_top + 'px';                        
+                    }
+                break;
+                case 'ArrowUp':
+                    
+                    var value_top = nobita.style.top;
+                    value_top = parseInt( value_top);
+                    value_top = value_top - 5;
+                    if( value_top <= 1000) {
+                        nobita.style.top = value_top + 'px';                        
+                    }
+                break;
+                
+                
+            }
+
+        });        
+    </script>
+</body>
+</html>
