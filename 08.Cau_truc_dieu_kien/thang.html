@@ -5,15 +5,69 @@
 <title>Document</title>
 </head>
 <body>
+    <form action="thang.html" method="GET">
+        <input type="number" name="" id="thang" value="">
+        <input type="button" name="" id="tinh" value="Tính số ngày">
+        <br>
+        <p id="kq"></p>
+    </form>
     <script>
-        let thang = 2; // input
-        if (thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10 || thang == 12) {
-            document.write('Tháng' + thang + ' có 31 ngày');
-        } else if (thang == 2) {
-            document.write('Tháng' + thang + ' có 28 hoặc 29 ngày');
+        var kq = document.getElementById('kq');
+        var bam = document.getElementById('tinh');
+        bam.addEventListener('click', function () {
+            var thang = document.getElementById('thang').value;
+            thang = parseInt(thang);
+            switch (thang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    kq.innerHTML = 'Tháng ' + thang + ' có 31 ngày';
+                    //alert('Tháng ' + thang + ' có 31 ngày');
+                    break;
+                case 2:
+                    kq.innerHTML = 'Tháng ' + thang + ' có 28 hoặc 29 ngày';
+                    //alert('Tháng ' + thang + ' có 28 hoặc 29 ngày');
+                    break;
+                default:
+                    kq.innerHTML = 'Tháng ' + thang + ' có 30 ngày';
+                    //alert('Tháng ' + thang + ' có 30 ngày');
+                    break;
+            }
+        })
 
-        } else if   
-        }
+        // var thang = 2
+        // if (thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10 || thang == 12) {
+        //     document.write('Tháng ' + thang + ' có 31 ngày'); 
+        // } else {
+        //     if (thang == 2) {
+        //         document.write('Tháng ' + thang + ' có 29 hoặc 28 ngày');
+        //     } else {
+        //         document.write('Tháng ' + thang + ' có 30 ngày');
+        //     }
+
+        // }
+
+        // switch (thang) {
+        //     case 1:
+        //     case 3:
+        //     case 5:
+        //     case 7:
+        //     case 8:
+        //     case 10:
+        //     case 12:
+        //         document.write('Tháng ' + thang + ' có 31 ngày'); 
+        //         break;
+        //     case 2:
+        //         document.write('Tháng ' + thang + ' có 28 hoặc 29 ngày'); 
+        //         break;
+        //     default:
+        //         document.write('Tháng ' + thang + ' có 30 ngày'); 
+        //         break;
+        // }
     </script>
 </body>
 </html>
