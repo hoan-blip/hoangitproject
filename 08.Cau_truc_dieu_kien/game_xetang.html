@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="border: 1px solid black; height: 250px; width: 250px; background-color: black;">
+        <img id="tank"
+            src="tank.png"
+            style="position: relative; top: 0px; left: 0px; transform: rotate(0deg);"
+            width="20"
+            height="20"
+
+        >
+        
+    </p>
+    
+   <script>
+        let tank = document.getElementById('tank');
+        document.addEventListener('keydown', function(e){
+            let phim_bam = e.code;
+            switch (phim_bam){
+                case 'ArrowRight':
+
+                // lấy giá trị
+                var value_left = tank.style.left;
+
+                // chuyển đổi dữ liệu
+                value_left = parseInt(value_left);
+
+                // tăng giá trị value_left
+                value_left = value_left + 5;
+                if( value_left <= 230) {
+
+                        // đặt lại giá trị style.left
+                        tank.style.left = value_left + 'px';
+
+                        // xoay sang phải 90 độ
+                        tank.style.transform = 'rotate(90deg)';
+                }
+                break;        
+                
+                case 'ArrowLeft' :
+                var value_left = tank.style.left;
+                value_left = parseInt(value_left);
+                value_left = value_left - 5;
+                if( value_left <= 230) {
+                        tank.style.left = value_left + 'px';
+                        tank.style.transform = 'rotate(270deg)';
+                }
+                break;        
+
+                    
+                case 'ArrowDown' :
+                var value_top = tank.style.top;
+                value_top = parseInt(value_top);
+                value_top = value_top + 5;
+                if( value_top <= 230) {
+                        tank.style.top = value_top + 'px';
+                        tank.style.transform = 'rotate(180deg)';
+                }
+                break;
+
+                
+                        
+            
+                case 'ArrowUp':
+                var value_top = tank.style.top;
+                value_top = parseInt(value_top);
+                value_top = value_top - 5;
+                if( value_top <=230) {
+                        tank.style.top = value_top + 'px';
+                        tank.style.transform = 'rotate(360deg)';
+                }        
+                break;
+                            
+           
+                            
+            }
+        })
+    </script>
+</body>
+</html>
