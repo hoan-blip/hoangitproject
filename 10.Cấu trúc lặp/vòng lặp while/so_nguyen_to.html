@@ -6,13 +6,13 @@
 </head>
 <body>
     <script>
-        let numbers = 10; //input
+        let numbers = prompt('nhập số ?');
         let count_so_nguyen_to   = 0;
 
-        for( let n = 2; n <= 10;  n++){
+        for( let n = 2; n <= numbers;  n++){
 
             let count_uoc_so = 0;
-            for( let y = 2; y <= 10; y++ ){
+            for( let y = 2; y <= numbers; y++ ){
                 if( n % y == 0 && y <= n ){
                     count_uoc_so++;
                 }
@@ -22,9 +22,9 @@
                 document.write( n + 'Là số nguyên tố <br>');
             }
         }
-        document.write('Có tổng cộng là: ' + count_so_nguyen_to + ' số nguyên tố');
-        document.write('<br>');
-        document.write(`Có tổng cộng là: ${count_so_nguyen_to} số nguyên tố`);
+        // document.write('Có tổng cộng là: ' + count_so_nguyen_to + ' số nguyên tố');
+        // document.write('<br>');
+        // document.write(`Có tổng cộng là: ${count_so_nguyen_to} số nguyên tố`);
     </script>
 </body>
 </html>
