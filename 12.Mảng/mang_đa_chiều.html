@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let dia_games = [];  //khởi tạo mảng
+        dia_games[0] = 'Pes2021';
+        dia_games[1] = 'FIFA Online 4';
+        dia_games[2] = 'Mario';
+        dia_games[3] = 'Cá Lớn Nuốt Cá Bé';
+
+        dia_games[4]    = []; //khởi tạo mảng rỗng
+        dia_games[4][0] = 'Bút';
+        dia_games[4][1] = 'Vở';
+        /*
+            dia_game[2] = ['Bút','Vở']
+        */    
+
+        //cho thêm vào hộp đĩa Phía Trước Là Bầu Trời (hiện tại chỉ có 0123)
+        dia_games[5] = 'Phía Trước Là Bầu Trời';
+
+        console.log( dia_games );
+
+        let tu_sach = [
+            'Toán',
+            'Văn',
+            'Sử',
+            'Địa',
+            [
+                'Doraemon',
+                'TSubasa',
+                ['Bút']
+            ]
+        ];
+        console.log(tu_sach);
+
+        console.log(tu_sach[4][0]);
+
+        tu_sach[4][1] = 'Jindo';
+
+        console.log(tu_sach[4][1]);
+
+        tu_sach[0] = dia_games;
+        console.log(tu_sach);
+        console.log(tu_sach[4][2][0]); 
+    </script>
+</body>
+
+</html>
