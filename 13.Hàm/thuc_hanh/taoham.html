@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id='ketqua'></h1>
+    <script>
+
+        function processConfirm(answer,answer_2) {
+            //alert(answer_1);
+            //alert(answer_2);
+            let result = '';
+            if (answer == 'hello') {
+                result = "Excellent. We'll play a nice game of chess.";
+            } else {
+                result = "Maybe later then.";
+            }
+            document.getElementById('ketqua').innerHTML = result;
+        }
+
+        // let confirmAnswer = confirm("Shall we play a game?");
+        // let theAnswer = processConfirm(confirmAnswer);
+        // alert(theAnswer);
+        processConfirm('hello123','moto');
+
+    </script>
+</body>
+
+</html>
