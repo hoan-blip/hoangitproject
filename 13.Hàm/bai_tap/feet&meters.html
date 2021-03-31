@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>
+        <label>Feet</label>
+        <input id="fff" type="number" value="Nhập Feet" onkeyup=" xu_ly_1(); ">        
+    </p>
+    <p>Feet: <span id="fff_text" ></span></p>
+        <p>
+        <label>Meters</label>
+        <input id="ccc" type="number" value="Nhập Meters" onkeyup=" xu_ly_2(); ">        
+    </p>
+    <p>Meters: <span id="ccc_text" ></span></p>
+
+    <script>
+        function footToMeter( foot ){
+            let meter = 0.305 * foot;
+            return meter;
+
+        }
+
+        function meterToFoot(meter){
+            let foot = 3.279 * meter;
+            return foot;
+        }
+
+        function xu_ly_1() {
+            //lấy giá trị input
+            let gia_tri_1 = document.getElementById('fff').value;
+
+            //gọi hàm
+            let ket_qua_1 = footToMeter( gia_tri_1 );
+
+            //hien thi ra tai the html co id la fff_text
+            document.getElementById('fff_text').innerHTML = ket_qua_1;
+
+
+        }
+        function xu_ly_2() {
+            let gia_tri_2 = document.getElementById('ccc').value;
+
+            let ket_qua_2 = meterToFoot( gia_tri_2 );
+
+            document.getElementById('ccc_text').innerHTML = ket_qua_2;
+            
+        }
+    </script>
+</body>
+</html>
