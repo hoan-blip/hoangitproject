@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="text"] {
+            width: 100%;
+        }
+
+        select {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h1>Đăng ký thành viên</h1>
+
+        <table>
+            <tr>
+
+                <td>Họ: </td>
+                <td colspan="3"><input type="text" name="ho" id="ho" size="25" class="input1" />
+                    <h5 id="inHo" style="color:red; "></h5>
+
+                </td>
+
+            </tr>
+            <tr>
+
+                <td>Tên:</td>
+                <td colspan="3"><input type="text" name="tên" id="ten" class="input1" />
+                    <h5 id="inTen" style="color:red;"></h5>
+
+                </td>
+
+            </tr>
+            <tr>
+
+                <td>Email: </td>
+                <td colspan="3"><input type="text" name="email" id="email" class="input1" />
+                    <h5 id="inEmail" style="color: red;"></h5>
+                </td>
+
+
+            </tr>
+            <tr>
+
+                <td>Mật Khẩu:</td>
+                <td colspan="3"><input type="password" name="mk" id="matkhau" class="input1" />
+                    <h5 id="inMK" style="color: red;"></h5>
+
+                </td>
+
+
+            </tr>
+            <tr>
+
+                <td>Ngày Sinh:</td>
+
+                <td>
+                    <select name="" id="ngay">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="" id="thang">
+                        <option value="1">Tháng 1</option>
+                        <option value="2">Tháng 2</option>
+                        <option value="3">tháng 3</option>
+                        <option value="4">Tháng 4</option>
+                        <option value="5">Tháng 5</option>
+                        <option value="6">Tháng 6</option>
+                        <option value="7">Tháng 7</option>
+                        <option value="8">Tháng 8</option>
+                        <option value="9">Tháng 9</option>
+                        <option value="10">Tháng 10</option>
+                        <option value="11">Tháng 11</option>
+                        <option value="12">Tháng 12</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="" id="nam">
+                        <option value="1990">1990</option>
+                        <option value="1991">1991</option>
+                        <option value="1992">1992</option>
+                        <option value="1993">1993</option>
+                        <option value="1994">1994</option>
+                        <option value="1995">1995</option>
+                        <option value="1996">1996</option>
+                        <option value="1997">1997</option>
+                        <option value="1998">1998</option>
+                        <option value="1999">1999</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                    </select>
+                </td>
+
+
+            </tr>
+
+            <tr>
+
+                <td>Giới Tính: </td>
+                <td><input type="radio" name="gioitinh" id="gioi_tinh" value="1" checked="checked" />
+                    Nam<input type="radio" name="gioitinh" value="0" />Nữ</span>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td colspan="1" align="center">
+                    <input type="button" name="xn" class="nut" value="Đăng Ký" onclick="dang_ky();">
+
+                </td>
+
+            </tr>
+        </table>
+
+    </form>
+    <script>
+        function dang_ky() {
+            let ho = document.getElementById('ho').value;
+            let ten = document.getElementById('ten').value;
+            let email = document.getElementById('email').value;
+            let matkhau = document.getElementById('matkhau').value;
+            let ngay = document.getElementById('ngay').value;
+            let thang = document.getElementById('thang').value;
+            let nam = document.getElementById('nam').value;
+
+            if (ho == "") {
+                document.getElementById('inHo').innerHTML = ('Họ không được để trống !');
+            }else {
+                document.getElementById('inHo').innerHTML = ('');               
+            }
+            if (ten == "") {
+                document.getElementById('inTen').innerHTML = ('Tên không được để trống !');
+            }else{
+                document.getElementById('inHo').innerHTML = ('');
+            }
+            if (email == "") {
+                document.getElementById('inEmail').innerHTML = ('Email không được để trống !');
+            }else{
+                document.getElementById('inHo').innerHTML = ('');
+            }
+            if (matkhau == "") {
+                document.getElementById('inMK').innerHTML = ('Mật khẩu không được để trống !');
+            }else{
+                document.getElementById('inHo').innerHTML = ('');
+            }
+            if (ho != "" && ten != "" && email != "" && matkhau != "") {
+                document.write(`Chào mừng anh/chị ${ho} ${ten} đã đăng kí thành công! <br>
+                                Họ và Tên: ${ho} ${ten} <br>
+                                Email: ${email} <br>
+                                Ngày sinh: ${ngay} / ${thang} / ${nam} . `);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
