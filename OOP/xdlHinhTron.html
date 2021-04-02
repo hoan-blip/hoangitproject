@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let h_tron = function (ban_kinh) {
+
+            this.ban_kinh = ban_kinh;
+
+
+            this.lay_ban_kinh = function () {
+                return this.ban_kinh;
+            }
+            this.lay_dien_tich = function () {
+                return Math.PI * ban_kinh * ban_kinh;
+            }
+        };
+        let hinh_tron = new h_tron(2);
+        let r_ban_kinh = hinh_tron.lay_ban_kinh();
+
+        let dien_tich = hinh_tron.lay_dien_tich();
+        //alert(`Bán kính hình tròn là: ${} `)
+        document.write(`Bán kính hình tròn là: ${r_ban_kinh} Diện tích hình tròn là: ${dien_tich} `);
+
+    </script>
+</body>
+
+</html>

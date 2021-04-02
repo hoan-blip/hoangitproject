@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //khởi tạo đối tượng trực tiếp
+        var hoc_vien_1 = {
+            ten : 'Hoàn',
+            age : 19,
+            sdt : '0987654321',
+            tot_nghiep : false
+        };
+
+        
+
+        //khởi tạo lop bằng function
+        function Hoc_Vien( ten, age, sdt, tot_nghiep ) {
+            //thuộc tính
+            this.name    = ten;
+            this.age     = age;
+            this.phone   = sdt;
+            this.pass    = tot_nghiep;
+
+            //phương thức 
+            this.gotoschool = function () {
+                document.write(`Bạn ${this.name} đi học`);
+            }
+            this.report     = function () {
+                document.write('Bạn học viên báo cáo');
+            }
+            // document.write( `Tên: ${ten} <br> Tuổi: ${age} <br> Số điện thoại: ${sdt} ` )
+        }
+
+        //khởi tạo đối tượng
+        let objHoc_Vien = new Hoc_Vien( 'Hoàn', 19, 0987654321, true );
+
+        //truy xuất thuộc tính
+        document.write(`Tên học viên là: ${objHoc_Vien.name} <br> `)
+        document.write(`Tên học viên là: ${objHoc_Vien.age} <br> `)
+
+        //truy xuất phương thức
+        objHoc_Vien.gotoschool();
+
+
+
+
+
+        // Hoc_Vien( 'Hoàn', 19, 0987654321, true );        
+        // document.write( hoc_vien_1 );
+
+    </script>
+</body>
+</html>
