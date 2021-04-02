@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <canvas id="my_canvas" style="width: 500px; height: 500px; background-color: red;"> </canvas>
+    <canvas id="my_canvas" style="width: 500px; height: 200px; background-color: red;"> </canvas>
     <script>
         let my_canvas = document.getElementById('my_canvas');//khởi tạo đói tượng thông qua my_canvas
         let ctx = my_canvas.getContext('2d');//gọi tới phương thức getContext,truyền vào '2d'
@@ -37,7 +37,7 @@
         var width = 125;
         var height = 125;
         var padding = 20;
-        
+
         context.beginPath();
         context.moveTo(padding + width / 2, padding);        // Top Corner
         context.lineTo(padding + width, height + padding); // Bottom Right

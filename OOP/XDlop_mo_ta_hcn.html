@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="hhh" style="width: 500px; height: 220px; background-color: red;"></canvas>
+    <br>
+    <script>
+        let hcn = function(ts_chieu_dai, ts_chieu_rong){
+            this.chieu_dai  = ts_chieu_dai;
+            this.chieu_rong = ts_chieu_rong;
+
+            this.chu_vi    = function() {
+                return (this.chieu_dai + this.chieu_rong)*2;
+            }
+            this.dien_tich = function() {
+                return (this.chieu_dai * this.chieu_rong);
+            }
+        }
+        let hchu_nhat = new hcn(6,4);
+        let get_chu_vi = hchu_nhat.chu_vi();
+        let get_dien_tich = hchu_nhat.dien_tich()
+
+        document.write(`Chu vi hình chữ nhật là: ${get_chu_vi} <br>`);
+        document.write(`Diện tích hình chữ nhật là: ${get_dien_tich}`);
+    </script>
+</body>
+</html>
