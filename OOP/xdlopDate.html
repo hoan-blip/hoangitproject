@@ -12,46 +12,43 @@
     <script>
 
         let MyDate = function (day, month, year) {
-
             this.day = day;
-
             this.month = month;
-
             this.year = year;
 
+            //tra ve ngay - get
 
-            this.getDay = function () {
-                return this.day;
+            this.lay_ngay = function(){
+                return this.day
             }
-            this.getMonth = function () {
-                return this.month;
+            this.lay_thang = function(){
+                return this.month
             }
-            this.getYear = function () {
-                return this.year;
+            this.lay_nam = function(){
+                return this.year
             }
-            this.setDay = function (day) {
-                this.day = day;
+            //set
+            this.ngay_moi = function(new_day){
+                this.day = new_day;
             }
-            this.setMonth = function (month) {
-                this.month = month;
+            this.thang_moi = function(new_month){
+                this.month = new_month;
             }
-            this.setYear = function (year) {
-                this.year = year;
+            this.nam_moi = function(new_year){
+                this.year = new_year
             }
-            let date = new MyDate(2, 2, 2007);
-            day = date.getDay();
+            this.ngay_thang_nam = function(new_day, new_month, new_year){
+                this.day   = new_day;
+                this.month = new_month;
+                this.year  = new_year;
+            }
+        }
+        var hoan = new MyDate(12, 3, 9999);
+        document.write(`Hôm nay là ${hoan.day}/${hoan.month}/${hoan.year}. <br>` );
 
-            month = date.getMonth();
+        hoan.ngay_thang_nam(19, 11, 1996);
+        document.write(`Hôm nay là ${hoan.day}/${hoan.month}/${hoan.year}.` );
 
-            year = date.getYear();
-
-            alert(day + "/" + month + "/" + year);
-            date.setDay(10);
-            date.setMonth(10);
-            date.setYear(2019);
-
-            alert(day + "/" + month + "/" + year);
-        };
     </script>
 </body>
 
