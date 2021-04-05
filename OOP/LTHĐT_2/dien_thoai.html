@@ -45,7 +45,8 @@
             }
             //Có chức năng gửi tin nhắn tới một chiếc mobile khác.
             this.gui_tin_nhan = function(){
-
+                //lấy được nội dung ta vừa soạn
+                let noi_dung_tin_nhan = this.tin_nhan_dang_soan_thao;
             }
             //Có chức năng xem tin trong hộp thư đến.
             this.xem_tin_nhan_den = function(){
@@ -64,10 +65,12 @@
         let objNokia = new Mobile();
         //bật điện thoại
         objNokia.bat_dien_thoai();
+        objNokia.soan_tin_nhan();
         //kiểm tra
         let bat_hay_tat = objNokia.bat_hay_tat();
 
         document.write(`Trạng thái pin: ${objNokia.trang_thai_pin} `)
+        document.write(``)
     </script>
 </body>
 
