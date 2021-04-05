@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function goi_ten_sao(ten_sao) {
+
+            let tim_thay_sao = '';
+            //console.log(ten_sao);
+
+            let ten = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+            //            0           1          2        3       4         5         6
+            let sao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+            //            0           1          2        3       4            5              6
+
+            //duyệt mảng tên 
+            for(let i = 0; i <= (ten.length - 1); i++){
+
+                //ten[0] : Polaris
+                //ten[1] : Aldebaran
+                //ten[2] : Deneb
+                //ten[3] : Vega
+
+                if( ten[i] == ten_sao){
+                    tim_thay_sao = sao[i];//sao[3] : Lyra
+                }
+            }
+
+            alert(tim_thay_sao);
+        }
+
+        //tim Polaris
+        let nhap_ten_sao = prompt('Nhập tên sao: ?');
+        goi_ten_sao(nhap_ten_sao);
+
+
+
+    </script>
+</body>
+
+</html>
