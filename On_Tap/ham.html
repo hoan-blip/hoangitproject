@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function xu_ly( ){
+
+        }
+        
+        
+        // document.write(` Xin chào bạn Nguyễn A, số điện thoại của bạn là: 12345 `);
+        // document.write(` Xin chào bạn Nguyễn B, số điện thoại của bạn là: 678910 `);
+        // document.write(` Xin chào bạn Nguyễn C, số điện thoại của bạn là: 090909 `);
+        function chao_mung( ten, sđt ){
+            return `<br> Xin chào bạn ${ten}, số điện thoại của bạn là: ${sđt}`;
+            //document.write(`<br> Xin chào bạn ${ten}, số điện thoại của bạn là: ${sđt}`);
+        }
+        chao_mung('Nguyễn A','12345.');
+        chao_mung('Nguyễn B','678910.');
+        let ho_va_ten = 'Nguyễn Văn Hoàn';
+        let phone     = 123456;
+        let ket_qua   = chao_mung( ho_va_ten, phone );
+
+        alert(ket_qua);
+
+        function cong_hai_so( so_thu_nhat, so_thu_hai ){
+            return so_thu_nhat + so_thu_hai;
+        }
+        let tong = cong_hai_so( 3, 5 );
+        alert(tong);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./js/xu_ly.js"></script> -->
+</head>
+<body>
+    <input type="button" 
+        name=""
+        id=""
+        onclick="xu_ly_click;"
+        onmouseover="xu_ly_click_2_lan();"
+        value="Click">
+    <input id="xu_ly" type="button" value="Clickkkkk">
+    <script>
+        function xu_ly_click(){
+            alert('xu_ly_click');
+        }
+        function xu_ly_click_2_lan(){
+            alert('di_chuyen_chuot');
+        }
+        let nut_xu_ly = document.getElementById('xu_ly');
+        nut_xu_ly.addEventListener('click', function(){
+            xu_ly_click();
+        });
+            
+    
+    </script>
+</body>
+</html>

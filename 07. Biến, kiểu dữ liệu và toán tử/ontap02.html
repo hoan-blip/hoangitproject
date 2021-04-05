@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="so_a" onblur=" xu_ly()">
+    <input type="text" name="" id="so_b">
+    <script>
+        /* (ĐÂY LÀ GHI CHÚ - KHÔNG HIỂN THỊ)
+            CÁC MÃ JAVASCRIPT LUÔN PHẢI CHẠY TRONG CẶP THẺ <script>
+            - Ôn tập thuộc tính thẻ HTML
+            - Ôn tập cách lấy giá trị từ Input
+            - Ôn tập lại cách bắt sự kiện
+                Thuộc tính HTML: on <ten_su_kien> = ""
+                DOI_TUONG_LAY_VE.addEventListener('TEN_SU_KIEN',function(){
+	            });
+            - Tìm hiểu biến và kiểu dữ liệu
+            - Tìm hiểu toán tử
+            - Cách chuyển đổi kiểu dữ liệu
+            - Demo thực hiện code lấy value từ input và cộng lại
+        */
+       //Lấy giá trị từ Input
+        Gia_tri_so_a = document.getElementById("so_a")
+        console.log(Gia_tri_so_a.name)
+
+        /*function xu_ly(){
+            alert("Đừng điiiiii!!!!!!")
+        }*/
+        Gia_tri_so_a.addEventListener('blur',function(){
+            alert("Đừng điiiiii!!!!!!")
+	    })
+        B = document.getElementById("so_b")
+        B.addEventListener('click',function(){
+            alert("...")
+        })
+                       
+    </script>
+</body>
+</html>

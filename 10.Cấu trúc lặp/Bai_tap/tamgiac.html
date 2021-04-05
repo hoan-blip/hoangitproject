@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for ( let i = 5; i >= 1; i-- ){
+            for ( let ngang = 1; ngang <= 4; ngang++ ){
+                document.write('  ');
+            }
+            for ( let sao = 5; sao >= i; sao-- ){
+                document.write(' * ');
+            }
+            document.write('<br>')
+        }
+        document.write('<br>');
+        for ( let i = 1; i<=5; i++ ){
+            for ( let ngang = 4; ngang >= 1; ngang-- ){
+                document.write('  ');
+            }
+            for ( let sao = i; sao <= 5; sao++ ){
+                document.write(' * ');
+            }
+            document.write('<br>');
+        }
+
+        document.write('<hr>');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body> 
+    Nhập họ và tên <input type="Ho_va_ten" name="" id="Ho_va_ten" value="C03" />
+    Số điện thoại <input id="so_dien_thoai" value="12345678" />
+    Email <input id="dia_chi_email" value="hoqhoan@gmail.com" class="btn">
+
+    <script>
+        doi_tuong_ho_va_ten = document.getElementById ( "Ho_va_ten" );
+        console.log( doi_tuong_ho_va_ten.value );
+
+        doi_tuong_so_dien_thoai = document.getElementById ( "so_dien_thoai");
+        console.log( doi_tuong_so_dien_thoai.value );
+
+        doi_tuong_dia_chi_email = document.getElementById ( "dia_chi_email" );
+        console.log( doi_tuong_dia_chi_email.value );
+        /*
+        DOI_TUONG_LAY_VE.addEventListener('TEN_SU_KIEN',function(){
+        });
+        */
+        
+        function xu_ly() {
+          alert( 'Hover me !');
+      }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let year = parseInt(prompt("Enter a year"));
+        let la_nam_nhuan = false;
+
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    la_nam_nhuan = true;
+                }
+            } else {
+                la_nam_nhuan = true;
+            }
+        }
+
+        if (la_nam_nhuan) {
+            alert(year + " là năm nhuận");
+        } else {
+            alert(year + " không phải là năm nhuân");
+        }
+    </script>
+</body>
+
+</html>

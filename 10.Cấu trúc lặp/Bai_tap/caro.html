@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr,
+        td {
+            width: 50px;
+            height: 50px;
+        }
+        table,
+        td {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <p id="kq"></p>
+    <script>
+        var table_html = '<table border="1">';
+        for (let hang = 1; hang <= 8; hang++){
+            table_html += '<tr>';
+            for (let cot = 1; cot <= 8; cot++) {
+                if((hang + cot) % 2 == 0 ){
+                    table_html += '<td style="background-color: white;">';
+                }else {
+                    table_html += '<td style="background-color: black;">';       
+                }
+                table_html += '</td>';
+                
+            }
+            table_html += '</tr>';
+
+        }
+        table_html += '</table>';
+        let kq = document.getElementById('kq').innerHTML = table_html;
+    </script>
+</body>
+</html>
