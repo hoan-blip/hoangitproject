@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        this.Mobile = function (mobileName) {
+            this.Pin            = 100;
+            this.msgTexting     = '';
+            this.msgReceive     = '';
+            this.msgSent        = '';
+            this.stt            = false;
+            this.sttMobile      = sttMobile;
+            this.startMobile    = startMobile;
+            this.chargeMobile   = chargeMobile;
+            this.textMsg        = textMsg;
+            this.receiveMsg     = receiveMsg;
+            this.sentMsg        = sentMsg;
+            this.checkInbox     = checkInbox;
+            this.checkSentbox   = checkSentbox;
+            this.checkPin       = checkPin;
+            this.checkText      = checkText;
+            function startMobile() {
+                if (this.stt == false) {
+                    this.stt = true;
+                } else {
+                    this.stt = false;
+                }
+            }
+            function sttMobile() {
+                if (this.stt == true) {
+                    alert(mobileName +  ': Mode: On now');
+                } else {
+                    alert(mobileName + ': Mode: Off now');
+                }
+                this.Pin -= 1;
+            }
+            function chargeMobile() {
+                if (this.Pin <= 90) {
+                    this.Pin += 5;
+                } else {
+                    if (this.Pin < 100) {
+                        this.Pin += 1;
+                    }
+                }
+            }
+            function textMsg() {
+                if (this.stt == true) {
+                    var text = prompt('Nhập tin nhắn');
+                    this.msgTexting += text + ' - ';
+                    this.Pin -= 1;
+                } else {
+                    document.write('<h3 style="color: red;">' + mobileName + ' : Set Power On pls!!!' + '</h3>' + '<br>');
+                }
+            }
+            function receiveMsg(text) {
+                this.msgReceive += text + " - ";
+            }
+            function sentMsg(text, phone2) {
+                if (this.stt == true) {
+                    this.msgSent += text + ' - ';
+                    this.Pin -= 1;
+                    phone2.receiveMsg(text);
+                    // phone3.receiveMsg(text);
+                } else {
+                    document.write('<h3 style="color: red;">' + mobileName + ' : Set Power On pls!!!' + '</h3>' + '<br>');
+                }
+            }
+            function checkInbox() {
+                if (this.stt == true) {
+                    if (this.msgReceive == '') {
+                        document.write(mobileName + ' Không có tin nhắn đến' + '<br>')
+                    } else {
+                    document.write(this.msgReceive + '<br>');
+                    this.Pin -= 1;
+                    }
+                } else {
+                    document.write('<h3 style="color: red;">' + mobileName + ' : Set Power On pls!!!' + '</h3>' + '<br>');
+                }
+            }
+            function checkSentbox() {
+                if (this.stt == true) {
+                    if (this.msgSent == '') {
+                        document.write(mobileName + ' Không có tin nhắn đã gửi' + '<br>')
+                    } else {
+                    document.write(this.msgSent + '<br>');
+                    this.Pin -= 1;
+                    }
+                } else {
+                    document.write('<h3 style="color: red;">' + mobileName + ' : Set Power On pls!!!' + '</h3>' + '<br>');
+                }
+            }
+            function checkPin() {
+                if (this.stt == true) {
+                    document.write(mobileName + ' còn ' + this.Pin + ' %' + '<br>');
+                    this.Pin -= 1;
+                } else {
+                    document.write('<h3 style="color: red;">' + mobileName + ' : Set Power On pls!!!' + '</h3>' + '<br>');
+                }
+            }
+            function checkText() {
+                if (this.stt == true) {
+                    if (this.msgTexting == '') {
+                        document.write(mobileName + ' Không có tin nhắn đang soạn thảo' + '<br>')
+                    } else {
+                    document.write(this.msgTexting + '<br>');
+                    this.Pin -= 1;
+                    }
+                } else {
+                    document.write('<h3 style="color: red;">' + mobileName + ' : Set Power On pls!!!' + '</h3>' + '<br>');
+                }
+            }
+        }
+        var Nokia = new Mobile('Nokia');
+        Nokia.startMobile();
+        var Iphone = new Mobile('Iphone');
+        Iphone.startMobile();
+        var Samsung = new Mobile('Samssung');
+        Samsung.startMobile();
+        // Nokia.checkPin();
+        // Iphone.checkPin();
+        // Samsung.checkPin();
+        // Nokia.sentMsg('Hi!', Samsung, Iphone);
+        // Samsung.sentMsg('Hello!', Nokia, Iphone);
+        // Iphone.sentMsg('Hola!', Nokia, Samsung)
+        // Nokia.checkInbox();
+        // Samsung.checkInbox();
+        // Iphone.checkInbox();
+        Nokia.sentMsg('akjsd', Iphone);
+        Iphone.checkInbox();
+        
+​
+​
+​
+    </script>
+</body>
+</html>

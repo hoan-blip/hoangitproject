@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //khai báo lớp điện thoại
+        let Mobile = function () {
+            this.trang_thai_pin = 100; //0-->100
+            this.tn_dang_soan_thao = '';
+            this.hop_thu_den = '';
+            this.tin_nhan_da_gui = '';
+            
+            //giúp lưu giữ tình trạng bật tắt
+            this.tinh_trang_dien_thoai  = false;
+            //chức năng kiểm tra bật hay tắt
+            this.bat_hay_tat = function () {
+                return this.tinh_trang_dien_thoai;
+            }
+            //chức năng bật điện thoại
+            this.bat_dien_thoai = function () {
+                this.tinh_trang_dien_thoai = true;
+            }
+            //chức năng tắt điện thoại
+            this.tat_dien_thoai = function () {
+
+            }
+            //chức năng sạc pin điện thoại
+            this.sac_pin = function () {
+
+            }
+            //chức năng soạn tin nhắn
+            this.soan_tin_nhan = function(new_Mess){
+                this.tin_nhan_dang_soan_thao = new_Mess;
+            }
+            //Có chức năng nhận tin nhắn từ một chiếc mobile khác.
+            this.nhan_tin_nhan = function(){
+
+            }
+            //Có chức năng gửi tin nhắn tới một chiếc mobile khác.
+            this.gui_tin_nhan = function(){
+
+            }
+            //Có chức năng xem tin trong hộp thư đến.
+            this.xem_tin_nhan_den = function(){
+
+            }
+            //Có chức năng xem tin đã gửi.
+            this.xem_tin_nhan_gui = function(){
+
+            }
+            // Lưu ý:
+            // Sau mỗi lần sử dụng một chức năng, năng lượng pin sẽ giảm đi một đơn vị.
+            // Các chức năng không thể hoạt động nếu điện thoại chưa bật.
+        }
+
+        //khởi tạo đối tượng
+        let objNokia = new Mobile();
+        //bật điện thoại
+        objNokia.bat_dien_thoai();
+        //kiểm tra
+        let bat_hay_tat = objNokia.bat_hay_tat();
+
+        document.write(`Trạng thái pin: ${objNokia.trang_thai_pin} `)
+    </script>
+</body>
+
+</html>
