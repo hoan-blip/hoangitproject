@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //Ví dụ về sự kế thừa 
+        class HinhHoc {
+            tinhChuVi(){ 
+                document.write('HinhHoc: tinhChuVi <br>');  
+            }
+            tinhDienTich(){ 
+                document.write('HinhHoc: tinhDienTich <br>');
+            }
+        }
+
+        //Lớp HinhChuNhat kế thừa lại lớp HinhHoc
+        class HinhChuNhat extends HinhHoc {
+            veHinh(){
+                document.write('HinhChuNhat: veHinh <br>');
+            }
+        }
+
+        objHinhChuNhat = new HinhChuNhat();//khởi tạo đối tượng
+        objHinhChuNhat.tinhChuVi();//gọi phương thức cha
+        objHinhChuNhat.tinhDienTich();//gọi phương thức cha
+        objHinhChuNhat.veHinh();//gọi phương thức trong lớp
+
+    </script>
+</body>
+</html>
