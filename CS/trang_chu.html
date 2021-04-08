@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook-Đăng nhập hoặc đăng ký</title>
+</head>
+
+<body style="background: #f0f2f5;">
+    <table>
+        <tr>
+            <td>
+
+                <img src="./Screenshot_1.png">
+
+            </td>
+            <td>
+
+                <table>
+                    <tr>
+                        <td colspan="3"><input type="text" name="sdt" id="sdt" style="width:100%"
+                                placeholder="Email hoặc số điện thoại" class="input1" />
+                            <h9 id="inEmaill" style="color:red; "></h9>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><input type="password" name="mk" id="mk" style="width:100%"
+                                placeholder="Mật khẩu" class="input1" />
+                            <h9 id="inMKK" style="color:red; "></h9>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="1" align="center">
+
+                            <input type="button" name="dn" id="dn" class="nut"
+                                value="                            Đăng Nhập                           "
+                                style="background-color: rgb(87, 135, 211);" onclick="dang_nhap();">
+                        </th>
+                    </tr>
+                    <tr>
+                        <td><a href="./quen_mat_khau.html"> Quên mật khẩu? </a> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <hr>
+                            <a href="./dang_ky.html">
+                                <input type="button" name="dk" class="nut"
+                                    value="                        Tạo tài khoản mới                      "
+                                    style="background-color: rgb(127, 231, 23);" onclick="dang_ky();"></a>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+
+    </table>
+    <script>
+        document.getElementById("")
+            .addEventListener("keyup", function (event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    document.getElementById("dn").click();
+                }
+            });
+        function dang_nhap() {
+            let taikhoan = document.getElementById('sdt').value;
+            let matkhau = document.getElementById('mk').value;
+
+            if (taikhoan == "") {
+                document.getElementById('inEmaill').innerHTML = 'Email và sđt không được để trống !';
+            } else {
+                document.getElementById('inEmaill').innerHTML = '';
+            }
+            if (matkhau == "") {
+                document.getElementById('inMKK').innerHTML = 'Mật khẩu không được để trống !';
+            } else {
+                document.getElementById('inMKK').innerHTML = '';
+            }
+            if (taikhoan != "" && matkhau != "") {
+                window.location = "dang_nhap_thanh_cong.html";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

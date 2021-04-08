@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quên mật khẩu</title>
+</head>
+
+<body style="background: #f0f2f5;">
+    <table>
+        <tr>
+            <td>
+
+                <img src="./Screenshot_1.png">
+
+            </td>
+            <td>
+
+                <table>
+                    <tr>
+                        <h2>Tìm tài khoản của bạn</h2>
+                        <hr>
+                    </tr>
+                    <tr>
+                        <td >
+                            Vui lòng nhập email hoặc số điện thoại để tìm kiếm tài khoản
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="email" id="email1" style="width: 100%;"
+                                placeholder="Email và số điện thoại" class="input1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="button" name="tk" class="nut" value="Tìm kiếm"
+                                style="background: rgb(96, 70, 245);" onclick="tim_kiem();">
+                            <input type="button" name="huy" class="nut" value="Hủy"
+                                style="background: rgb(184, 189, 194);" onclick="huy();">
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+    <script>
+        function tim_kiem() {
+            let email = document.getElementById('email1').value;
+            if (email == "") {
+                document.getElementById('inEmail').innerHTML = ('Email và số điện thoại không được để trống !');
+            }
+            if(email != ""){
+                document.write(`Đã gửi mã OTP qua: ${email} để đặt lại mật khẩu cho bạn.`);
+            }
+        }
+        function huy() {
+            window.location.href = "trang_chu.html";
+        }
+    </script>
+</body>
+
+</html>
