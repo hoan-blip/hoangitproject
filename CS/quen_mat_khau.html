@@ -18,29 +18,32 @@
             </td>
             <td>
 
-                <table>
+                <table style="background-color: white; border-radius: 15px;padding-left: 10px;">
                     <tr>
                         <h2>Tìm tài khoản của bạn</h2>
                         <hr>
                     </tr>
                     <tr>
-                        <td >
+                        <td>
                             Vui lòng nhập email hoặc số điện thoại để tìm kiếm tài khoản
 
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" name="email" id="email1" style="width: 100%;"
+                            <input type="text" name="email" id="email1" style="width: 96%;"
                                 placeholder="Email và số điện thoại" class="input1" />
+                            <h5 id="inEmail" style="color: red;"></h5>
+                            <h5 id="thanhcong" style="color: rgb(107, 3, 81);"></h5>
+
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2" align="center">
-                            <input type="button" name="tk" class="nut" value="Tìm kiếm"
-                                style="background: rgb(96, 70, 245);" onclick="tim_kiem();">
+                            <input type="button" name="tk" class="nut" id="tkk" value="Tìm kiếm"
+                                style="background: rgb(96, 70, 245);" onclick="objTimKiem.kiemtra_email();">
                             <input type="button" name="huy" class="nut" value="Hủy"
-                                style="background: rgb(184, 189, 194);" onclick="huy();">
+                                style="background: rgb(184, 189, 194);" onclick="objTimKiem.huy();">
                         </td>
                     </tr>
                 </table>
@@ -48,20 +51,72 @@
             </td>
         </tr>
     </table>
+    <p id="otp"></p>
     <script>
-        function tim_kiem() {
-            let email = document.getElementById('email1').value;
-            if (email == "") {
-                document.getElementById('inEmail').innerHTML = ('Email và số điện thoại không được để trống !');
+        class TimKiem {
+            constructor() {
+                this.email = "";
+                this.otp = document.getElementById('otp');
+                this.ma = "";
+                this.a = "";
             }
-            if(email != ""){
-                document.write(`Đã gửi mã OTP qua: ${email} để đặt lại mật khẩu cho bạn.`);
+            kiemtra_email() {
+                this.email = document.getElementById('email1').value;
+                if (this.email != "") {
+                    document.getElementById('thanhcong').innerHTML = (`Đã gửi mã OTP qua: ${this.email} để đặt lại mật khẩu cho bạn.`);
+                    this.otp.innerHTML = `<p>Nhập mã OTP vào: </p>  <input type="text" placeholder="Nhập OTP" id="ma"> <br> <br> 
+                                        <input type="button" name="ok" class="nut" value="OK" onclick="objTimKiem.OK();">
+                                        <input type="button" name="gl" class="nut" value="Gửi lại" 
+                                        onclick="objTimKiem.gui_lai();" > `;
+
+                }
+                if (this.email == "") {
+                    document.getElementById('inEmail').innerHTML = ('Email và số điện thoại không được để trống !');
+                } else {
+                    document.getElementById('inEmail').innerHTML = ('');
+                    var b = Math.floor(Math.random() * 100000);
+                    setTimeout(function () {
+                        alert(b)
+                    }, 2000);
+                    this.a = b;
+                }
+
+
+            }
+            gui_lai() {
+                var c = Math.floor(Math.random() * 100000);
+                setTimeout(function () {
+                    alert(c)
+                }, 2000);
+                this.b = c;
+            }
+            OK() {
+                this.ma = document.getElementById('ma').value;
+                if (this.ma == this.a || this.ma == this.b) {
+                    alert(`123456 là mật khẩu mới của bạn.
+                    Lấy lại mật khẩu fakebook thành công !`);
+                } else {
+                    document.getElementById('ma').innerHTML = 'Mã sai !';
+                }
+                document.getElementById('ma').value = '';
+                // document.getElementById('email1').value = '';
+                setTimeout(function () {
+                    window.location.href = 'quen_mat_khau.html';
+                }, 18000);
+
+            }
+
+            huy() {
+                window.location.href = 'trang_chu.html';
             }
         }
-        function huy() {
-            window.location.href = "trang_chu.html";
-        }
+        objTimKiem = new TimKiem();
+        var t_kiem = document.getElementById('tkk');
+
+
+
     </script>
+
 </body>
 
 </html>

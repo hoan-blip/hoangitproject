@@ -16,17 +16,18 @@
                 <img src="./Screenshot_1.png">
 
             </td>
-            <td>
+            <td style="height:100px;">
 
-                <table>
+                <table
+                    style="background: rgb(255, 255, 255); width:140%;height: 70%; text-align: center; border-radius: 10px;">
                     <tr>
-                        <td colspan="3"><input type="text" name="sdt" id="sdt" style="width:100%"
+                        <td colspan="3"><input type="text" name="sdt" id="sdt" style="width:95%"
                                 placeholder="Email hoặc số điện thoại" class="input1" />
                             <h9 id="inEmaill" style="color:red; "></h9>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="3"><input type="password" name="mk" id="mk" style="width:100%"
+                        <td colspan="3"><input type="password" name="mk" id="mk" style="width:95%"
                                 placeholder="Mật khẩu" class="input1" />
                             <h9 id="inMKK" style="color:red; "></h9>
                         </td>
@@ -58,16 +59,14 @@
 
     </table>
     <script>
-        document.getElementById("")
-            .addEventListener("keyup", function (event) {
-                event.preventDefault();
-                if (event.keyCode === 13) {
-                    document.getElementById("dn").click();
-                }
-            });
         function dang_nhap() {
             let taikhoan = document.getElementById('sdt').value;
             let matkhau = document.getElementById('mk').value;
+            let get_data_arr = localStorage.getItem("DaTa");
+            get_data_arr = JSON.parse(get_data_arr);
+
+            console.log(get_data_arr);
+
 
             if (taikhoan == "") {
                 document.getElementById('inEmaill').innerHTML = 'Email và sđt không được để trống !';
@@ -80,7 +79,28 @@
                 document.getElementById('inMKK').innerHTML = '';
             }
             if (taikhoan != "" && matkhau != "") {
-                window.location = "dang_nhap_thanh_cong.html";
+                // duyệt mảng get_data_arr
+                for (let i = 0; i < get_data_arr.length; i++) {
+                    console.log(get_data_arr[i][0]);
+                    console.log(get_data_arr[i][1]);
+
+                    let gia_tri_email = get_data_arr[i][0];
+                    let gia_tri_matkhau = get_data_arr[i][3];
+
+                    if (gia_tri_email != taikhoan) {
+                        document.getElementById('inEmaill').innerHTML = 'Sai tài khoản !';
+                    } else {
+                        document.getElementById('inEmaill').innerHTML = '';
+                    }
+                    if (gia_tri_matkhau != matkhau) {
+                        document.getElementById('inMKK').innerHTML = 'Sai mật khẩu !';
+                    } else {
+                        document.getElementById('inMKK').innerHTML = '';
+                    }
+                    if (gia_tri_email == taikhoan && gia_tri_matkhau == matkhau) {
+                        window.location.href = "dang_nhap_thanh_cong.html"
+                    }
+                }
             }
         }
 

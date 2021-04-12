@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập thành công</title>
 </head>
+
 <body>
-    <img src="./Untitled.png">
+    <img src="./UUntitled.png" width="100%" height="100%">
+    <div>Danh Sách Đã Đăng Kí</div>
+    <table border="1" style="border-collapse: collapse; color: rgb(92, 7, 78)" id="bangDS">
+    </table>
+
+        <script>
+            function dsDangKy() {
+                //lay data cu
+                let get_data_arr = localStorage.getItem("DaTa")
+                let danhsach = JSON.parse(get_data_arr);
+
+                console.log(danhsach);
+
+                var tableHtml = '';
+                
+
+                for (var x = 0; x < danhsach.length; x++) {
+                    tableHtml += `<tr id='${x}'>`;
+                        tableHtml += `<td id='STT${x + 1}'>${x + 1}</td>`;
+                        tableHtml += `<td> ${ danhsach[x][0] } </td>`;
+                        tableHtml += `<td> ${ danhsach[x][1] }${danhsach[x][2]} </td >`;
+                        
+                    tableHtml += '</tr>';
+                }
+                tableHtml += '</table>';
+                document.getElementById('bangDS').innerHTML = tableHtml;
+
+                if (danhsach.length == 0) {
+                    document.getElementById('bangDS').innerHTML = `<h1><b style="color: red">Chưa có học viên nào đăng ký!!!</b></h1>`;
+                }
+            }
+            dsDangKy() ;
+        </script>
 </body>
+
 </html>

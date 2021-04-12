@@ -3,8 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     <title>Đăng Ký</title>
 </head>
 
@@ -19,11 +17,11 @@
             <td>
 
                 <table>
-                    <form>
+                    <form action="">
                         <h1>Đăng Ký</h1>
                         <h7>Nhanh chóng và dễ dàng</h7>
                         <hr>
-                        <table>
+                        <table style="background-color: white; border-radius: 15px;padding-left: 10px;">
                             <tr>
 
                                 <td>Họ: </td>
@@ -44,7 +42,7 @@
                             </tr>
                             <tr>
 
-                                <td>Email và số điện tdoại: </td>
+                                <td>Email và số điện thoại: </td>
                                 <td><input type="text" name="email" id="email" placeholder="Email và số điện thoại"
                                         class="input1" />
                                     <h9 id="inEmail" style="color: red;"></h9>
@@ -104,7 +102,7 @@
                                                 </select>
                                             </td>
                                             <td>
-                                                <select name="" id="tdang">
+                                                <select name="" id="thang">
                                                     <option value="1">Tháng 1</option>
                                                     <option value="2">Tháng 2</option>
                                                     <option value="3">tdáng 3</option>
@@ -151,77 +149,120 @@
                             </tr>
 
                             <tr>
-
                                 <td colspan="2" align="center">
-                                    <input type="button" name="xn" class="nut" value="Đăng Ký"
-                                        style="background: lawngreen;" onclick="dang_ky();">
+                                    <input type="button" name="xn" id="nutdk" class="nut" value="Đăng Ký"
+                                        style="background: lawngreen;">
+                                    <input type="button" name="huy" id="nuthuy" class="nut" value="Hủy"
+                                        style="background: rgb(184, 189, 194);" onclick="objDangKy.huy();">
 
                                 </td>
-
                             </tr>
                         </table>
-
                     </form>
                 </table>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p>hehe</p>
             </td>
         </tr>
     </table>
     <p id="hien_thi" style="font-size: 50px;"></p>
     <script>
-        let hien_thi = document.getElementById("hien_thi");
-        function dang_ky() {
-            let ho = document.getElementById('ho').value;
-            let ten = document.getElementById('ten').value;
-            let email = document.getElementById('email').value;
-            let matkhau = document.getElementById('matkhau').value;
-            let ngay = document.getElementById('ngay').value;
-            let tdang = document.getElementById('tdang').value;
-            let nam = document.getElementById('nam').value;
-            let gioitinh1 = document.getElementById('gtnam');
-            let gioitinh2 = document.getElementById('gtnu');
+       
+        class DangKy {
+            constructor() {
+                this.hien_thi = document.getElementById("hien_thi");
+                this.ho = "";
+                this.ten = "";
+                this.email = "";
+                this.matkhau = "";
+                this.ngay = "";
+                this.thang = "";
+                this.nam = "";
+                this.gioitinh1 = "";
+                this.gioitinh2 = "";
+                this.du_lieu = [];
 
-            if (ho == "") {
-                document.getElementById('inHo').innerHTML = ('Họ không được để trống !');
-            } else {
-                document.getElementById('inHo').innerHTML = ('');
             }
-            if (ten == "") {
-                document.getElementById('inTen').innerHTML = ('Tên không được để trống !');
-            } else {
-                document.getElementById('inHo').innerHTML = ('');
-            }
-            if (email == "") {
-                document.getElementById('inEmail').innerHTML = ('Email không được để trống !');
-            } else {
-                document.getElementById('inHo').innerHTML = ('');
-            }
-            if (matkhau == "") {
-                document.getElementById('inMK').innerHTML = ('Mật khẩu không được để trống !');
-            } else {
-                document.getElementById('inHo').innerHTML = ('');
-            }
-            if (ho != "" && ten != "" && email != "" && matkhau != "") {
-                if (gioitinh1.checked == true) {
-                    hien_thi.innerHTML = (`Chào mừng anh ${ho} ${ten} đã đăng kí thành công! <br>
-                                Họ và Tên: ${ho} ${ten} <br>
-                                Email: ${email} <br>
-                                Ngày sinh: ${ngay} / ${tdang} / ${nam} . `);
+            
+            //khai báo phương thức kiểm tra dữ liệu
+            kiem_tra_du_lieu() {
+                this.ho = document.getElementById('ho').value;
+                this.ten = document.getElementById('ten').value;
+                this.email = document.getElementById('email').value;
+                this.matkhau = document.getElementById('matkhau').value;
+                this.ngay = document.getElementById('ngay').value;
+                this.thang = document.getElementById('thang').value;
+                this.nam = document.getElementById('nam').value;
+                this.gioitinh1 = document.getElementById('gtnam');
+                this.gioitinh2 = document.getElementById('gtnu');
+
+                if (this.ho == "") {
+                    document.getElementById('inHo').innerHTML = ('Họ không được để trống !');
                 } else {
-                    hien_thi.innerHTML = (`Chào mừng chị ${ho} ${ten} đã đăng kí thành công! <br>
-                                Họ và Tên: ${ho} ${ten} <br>
-                                Email: ${email} <br>
-                                Ngày sinh: ${ngay} / ${tdang} / ${nam} . `);
+                    document.getElementById('inHo').innerHTML = ('');
+                }
+                if (this.ten == "") {
+                    document.getElementById('inTen').innerHTML = ('Tên không được để trống !');
+                } else {
+                    document.getElementById('inHo').innerHTML = ('');
+                }
+                if (this.email == "") {
+                    document.getElementById('inEmail').innerHTML = ('Email không được để trống !');
+                } else {
+                    document.getElementById('inHo').innerHTML = ('');
+                }
+                if (this.matkhau == "") {
+                    document.getElementById('inMK').innerHTML = ('Mật khẩu không được để trống !');
+                } else {
+                    document.getElementById('inHo').innerHTML = ('');
                 }
 
             }
 
+            //khai baos phuong thuc them thanh vien
+            them_thanh_vien() {
+                let thong_tin_mot_nguoi = [];
+
+                if (this.ho != "" && this.ten != "" && this.email != "" && this.matkhau != "") {
+                    if (this.gioitinh1.checked == true) {
+                        this.hien_thi.innerHTML = (`Chào mừng anh ${this.ho} ${this.ten} đã đăng kí thành công! <br>
+                                Họ và Tên: ${this.ho} ${this.ten} <br>
+                                Email: ${this.email} <br>
+                                Ngày sinh: ${this.ngay} / ${this.thang} / ${this.nam} . `);
+                    } else {
+
+
+                        this.hien_thi.innerHTML = (`Chào mừng chị ${this.ho} ${this.ten} đã đăng kí thành công! <br>
+                                Họ và Tên: ${this.ho} ${this.ten} <br>
+                                Email: ${this.email} <br>
+                                Ngày sinh: ${this.ngay} / ${this.thang} / ${this.nam} . `);
+                    }
+
+                    thong_tin_mot_nguoi = [this.email, this.ho, this.ten, this.matkhau];
+                    this.du_lieu.push(thong_tin_mot_nguoi)
+                    // this.du_lieu = JSON.stringify(this.du_lieu);
+                    localStorage.setItem("DaTa", JSON.stringify(this.du_lieu));
+
+                    //xu ly sau khi đang ky thanh công, sau 3 giây, chuyển hướng
+                    setTimeout(function () {
+                        window.location.href = 'trang_chu.html';
+                    }, 2000);
+
+                }
+            }
+            huy() {
+
+                window.location.href = ' trang_chu.html'
+            }
         }
+        
+        //khoi tao doi tuong dang ky
+        objDangKy = new DangKy();
+
+        //bat su kien nut dang ky
+        var d_ky = document.getElementById('nutdk');
+        d_ky.addEventListener('click', function () {
+            objDangKy.kiem_tra_du_lieu();
+            objDangKy.them_thanh_vien();
+        });
 
 
     </script>
