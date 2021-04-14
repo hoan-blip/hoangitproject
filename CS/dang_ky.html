@@ -237,7 +237,13 @@
                     }
 
                     thong_tin_mot_nguoi = [this.email, this.ho, this.ten, this.matkhau];
-                    this.du_lieu.push(thong_tin_mot_nguoi)
+                   
+
+                    let get_data_arr = localStorage.getItem("DaTa")
+                    this.du_lieu = JSON.parse(get_data_arr);
+
+                    this.du_lieu.push(thong_tin_mot_nguoi);
+
                     // this.du_lieu = JSON.stringify(this.du_lieu);
                     localStorage.setItem("DaTa", JSON.stringify(this.du_lieu));
 
@@ -267,5 +273,4 @@
 
     </script>
 </body>
-
 </html>
